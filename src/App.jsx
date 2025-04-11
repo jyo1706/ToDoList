@@ -18,6 +18,7 @@ function App() {
  function onHandle(e) {
   e.preventDefault();
   formRef.current.reset(); // ✅ Resets the form
+  setTask('')
  }
   return (
     <>
