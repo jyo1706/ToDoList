@@ -17,10 +17,8 @@ function App() {
  const formRef = useRef(null); // ✅ form reference
  function onHandle(e) {
   e.preventDefault();
-  dispatch(add(task));
   formRef.current.reset(); // ✅ Resets the form
-  setTask(""); // Optional: reset state too
-}
+ }
   return (
     <>
       <div className='add'>
