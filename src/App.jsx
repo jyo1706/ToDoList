@@ -14,16 +14,19 @@ function App() {
  const [update,setUpdate] = useState(true)
  const [input,setInput] = useState(false)
  const [value,setValue] = useState()
- const handle = (e)=>
-  {
-   e.preventDefault()
-  }
+ const formRef = useRef(null); // ✅ form reference
+ function onHandle(e) {
+  e.preventDefault();
+  dispatch(add(task));
+  formRef.current.reset(); // ✅ Resets the form
+  setTask(""); // Optional: reset state too
+}
   return (
     <>
       <div className='add'>
       <h3>ToDO List</h3>
           <div className='addTask'>
-           <form onSubmit={handle}> 
+           <form onSubmit={handle} ref={formRef}> 
              <input type='type' name='addTask' onChange={(e)=>{setTask(e.target.value)}} />
              <button className='btn addBtn' onClick={()=>dispatch(add(task))}>Add Task</button>
             </form>
