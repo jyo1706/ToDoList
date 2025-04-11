@@ -14,14 +14,19 @@ function App() {
  const [update,setUpdate] = useState(true)
  const [input,setInput] = useState(false)
  const [value,setValue] = useState()
- console.log(myState)
+ const handle = (e)=>
+  {
+   e.preventDefault()
+  }
   return (
     <>
       <div className='add'>
       <h3>ToDO List</h3>
           <div className='addTask'>
+           <form onSubmit={handle}> 
              <input type='type' name='addTask' onChange={(e)=>{setTask(e.target.value)}} />
              <button className='btn addBtn' onClick={()=>dispatch(add(task))}>Add Task</button>
+            </form>
           </div>
          
           <div className='display'>
