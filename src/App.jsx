@@ -26,7 +26,7 @@ function App() {
       <div className='add'>
       <h3>ToDO List</h3>
           <div className='addTask'>
-           <form onSubmit={handle} ref={formRef}> 
+           <form onSubmit={onHandle} ref={formRef}> 
              <input type='type' name='addTask' onChange={(e)=>{setTask(e.target.value)}} />
              <button className='btn addBtn' onClick={()=>dispatch(add(task))}>Add Task</button>
             </form>
