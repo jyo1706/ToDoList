@@ -9,7 +9,7 @@
 .add h3
 {
   
-    color:white;
+    color:black;
     text-align: center;
     padding-top: 10px;
     margin-bottom: 0;
@@ -34,6 +34,7 @@
 .addBtn
 {
   background-color: black;
+  color:white;
 }
 .delBtn
 {
